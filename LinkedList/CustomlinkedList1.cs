@@ -33,5 +33,13 @@ namespace LinkedList
             return temp;
 
         }
+        public void AddFirst(int Data)
+        {
+            Node newNode = new Node(Data);
+            newNode.next = head;
+            head = newNode;
+            Console.WriteLine("{0} is inserted in the frist Node", newNode.data);
+        }
+
     }
 }
