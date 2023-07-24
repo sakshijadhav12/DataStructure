@@ -40,6 +40,10 @@ namespace LinkedList
             head = newNode;
             Console.WriteLine("{0} is inserted in the frist Node", newNode.data);
         }
+         public void Append(int data)
+        {
+            AddLast(data);
+        }
 
     }
 }

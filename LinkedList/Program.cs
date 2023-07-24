@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("linkedList");
-            Console.WriteLine("choose option u want! \n1.CustomLinkedList  \n2.Add in Frist");
+            Console.WriteLine("choose option u want! \n1.CustomLinkedList  \n2.Add in Frist \n3.Append");
              int option=Convert.ToInt32((string)Console.ReadLine());    
             switch(option)
             {
@@ -20,8 +20,13 @@
                     customlinkedList1.AddFirst(70);
                     customlinkedList1.AddFirst(56);
                     customlinkedList1.AddFirst(30);
+                   break;
+                case 3:
+                    CustomlinkedList1 customlinkedList2 = new CustomlinkedList1();
+                    customlinkedList2.Append(56);
+                    customlinkedList2.Append(30);
+                    customlinkedList2.Append(70);
                     break;
-
                 default:
                     Console.WriteLine("Invalid Option");
                  break;
