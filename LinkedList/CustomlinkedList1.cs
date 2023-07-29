@@ -44,6 +44,27 @@ namespace LinkedList
         {
             AddLast(data);
         }
+        public void InsertAfter(int targetValue, int newData)
+        {
+            Node temp = head;
+            while (temp != null)
+            {
+                if (temp.data == targetValue)
+                {
+                    Node newNode = new Node(newData);
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                    Console.WriteLine("{0} is inserted after {1}", newData, targetValue);
+                    break;
+                }
+                temp = temp.next;
+            }
+
+            if (temp == null)
+            {
+                Console.WriteLine("{0} not found in the list", targetValue);
+            }
+        }
 
     }
 }
