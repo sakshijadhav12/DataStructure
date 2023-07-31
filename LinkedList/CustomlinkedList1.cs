@@ -104,9 +104,22 @@ namespace LinkedList
             Console.WriteLine("Deleting the last element: {0}", temp.next.data);
             temp.next = null;
         }
-    
+        public Node Search(int targetValue)
+        {
+            Node temp = head;
+            while (temp != null)
+            {
+                if (temp.data == targetValue)
+                {
+                    return temp;
+                }
+                temp = temp.next;
+            }
 
-    public void Display()
+            return null;
+
+        }
+        public void Display()
         {
             Node temp = head;
             Console.Write("Linked List: ");

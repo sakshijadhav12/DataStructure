@@ -52,8 +52,22 @@
                     linkedList.PopLast();
                     linkedList.Display();
                     break;
+                case 7:
+                    CustomlinkedList1 linkedList1 = new CustomlinkedList1();
+                    linkedList1.AddLast(56);
+                    linkedList1.AddLast(30);
+                    linkedList1.AddLast(70);
 
-
+                    Node nodeWithTargetValue = linkedList1.Search(30);
+                    if (nodeWithTargetValue != null)
+                    {
+                        Console.WriteLine("Node with value 30 found: ");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Node with value 30 not found in the list.");
+                    }
+                    break;
                 default:
                     Console.WriteLine("Invalid Option");
                  break;
