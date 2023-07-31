@@ -9,24 +9,27 @@ namespace LinkedList
     internal class CustomlinkedList1
     {
         public Node head;
+       
         public void AddLast(int data)
         {
-            Node newNode =new Node(data);
-            if(head==null)
+            Node newNode = new Node(data);
+            if (head == null)
             {
                 head = newNode;
                 Console.WriteLine("{0} is inserted in the last Node", newNode.data);
             }
             else
             {
-                Node LastNode = GetLastNode();
-                Console.WriteLine("{0} is inserted in the last Node", newNode.data);
+                Node lastNode = GetLastNode();
+                lastNode.next = newNode;
             }
+            Console.WriteLine("{0} is inserted in the last Node", newNode.data);
         }
+
         public Node GetLastNode()
         {
             Node temp = head;
-            while(temp.next != null)
+            while (temp.next != null)
             {
                 temp = temp.next;
             }
@@ -40,7 +43,7 @@ namespace LinkedList
             head = newNode;
             Console.WriteLine("{0} is inserted in the frist Node", newNode.data);
         }
-         public void Append(int data)
+        public void Append(int data)
         {
             AddLast(data);
         }
@@ -65,6 +68,29 @@ namespace LinkedList
                 Console.WriteLine("{0} not found in the list", targetValue);
             }
         }
+        public void Pop()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("The linked list is empty. Nothing to delete.");
+                
+            }
+            else
+            Console.WriteLine("Deleting the first element: {0}", head.data);
+            head = head.next;
 
+        }
+       
+        public void Display()
+        {
+            Node temp = head;
+            Console.Write("Linked List: ");
+            while (temp != null)
+            {
+                Console.Write(temp.data + " -> ");
+                temp = temp.next;
+            }
+            Console.WriteLine("null");
+        }
     }
 }
