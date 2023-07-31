@@ -197,7 +197,57 @@ namespace LinkedList
         }
 
     }
-       
+
+
+    internal class Node<T> where T : IComparable<T>
+    {
+        public T data;
+        public Node<T> next;
+
+        public Node(T data)
+        {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    internal class SortedLinkedList<T> where T : IComparable<T>
+    {
+        public Node<T> head;
+
+        public void Add(T data)
+        {
+            Node<T> newNode = new Node<T>(data);
+
+          
+            if (head == null || data.CompareTo(head.data) < 0)
+            {
+                newNode.next = head;
+                head = newNode;
+                return;
+            }
+
+            Node<T> current = head;
+            while (current.next != null && data.CompareTo(current.next.data) >= 0)
+            {
+                current = current.next;
+            }
+
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+        public void Display()
+        {
+            Node<T> temp = head;
+            while (temp != null)
+            {
+                Console.Write(temp.data + " -> ");
+                temp = temp.next;
+            }
+            Console.WriteLine("null");
+        }
+
+    }
 }
     
 
