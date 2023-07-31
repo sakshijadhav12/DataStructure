@@ -9,7 +9,7 @@ namespace LinkedList
     internal class CustomlinkedList1
     {
         public Node head;
-       
+
         public void AddLast(int data)
         {
             Node newNode = new Node(data);
@@ -72,10 +72,10 @@ namespace LinkedList
             if (head == null)
             {
                 Console.WriteLine("The linked list is empty. Nothing to delete.");
-                
+
             }
             else
-            Console.WriteLine("Deleting the first element: {0}", head.data);
+                Console.WriteLine("Deleting the first element: {0}", head.data);
             head = head.next;
 
         }
@@ -140,9 +140,9 @@ namespace LinkedList
                 Console.WriteLine("{0} not found in the list", targetValue);
             }
         }
-    
 
-    public void Display()
+
+        public void Display()
         {
             Node temp = head;
             Console.Write("Linked List: ");
@@ -153,5 +153,52 @@ namespace LinkedList
             }
             Console.WriteLine("null");
         }
+
+        public void DeleteNodeWithValue(int targetValue)
+        {
+            if (head == null)
+            {
+                Console.WriteLine("The linked list is empty. Nothing to delete.");
+                return;
+            }
+
+            if (head.data == targetValue)
+            {
+                Console.WriteLine("Deleting the node with value {0}", head.data);
+                head = head.next;
+                return;
+            }
+
+            Node temp = head;
+            while (temp.next != null)
+            {
+                if (temp.next.data == targetValue)
+                {
+                    Console.WriteLine("Deleting the node with value {0}", temp.next.data);
+                    temp.next = temp.next.next;
+                    return;
+                }
+                temp = temp.next;
+            }
+
+            Console.WriteLine("Node with value {0} not found in the list.", targetValue);
+        }
+
+        public int GetSize()
+        {
+            int size = 0;
+            Node temp = head;
+            while (temp != null)
+            {
+                size++;
+                temp = temp.next;
+            }
+            return size;
+        }
+
     }
+       
 }
+    
+
+

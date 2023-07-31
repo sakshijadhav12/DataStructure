@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("linkedList");
-            Console.WriteLine("choose option u want! \n1.CustomLinkedList  \n2.Add in Frist \n3.Append \n4.Add in Middle \n5.Delete first \n6.DeleteLast \n7.Search \n8.Add at specific Position");
+            Console.WriteLine("choose option u want! \n1.CustomLinkedList  \n2.Add in Frist \n3.Append \n4.Add in Middle \n5.Delete first \n6.DeleteLast \n7.Search \n8.Add at specific Position \n9.Delete afer Search");
              int option=Convert.ToInt32((string)Console.ReadLine());    
             switch(option)
             {
@@ -85,6 +85,19 @@
                    }
 
                     break;
+                case 9:
+                    CustomlinkedList1 linkedList3 = new CustomlinkedList1();
+                    linkedList3.AddLast(56);
+                    linkedList3.AddLast(30);
+                    linkedList3.AddLast(40);
+                    linkedList3.AddLast(70);
+                      linkedList3.Display();
+                    linkedList3.DeleteNodeWithValue(40);
+                    linkedList3.Display();
+                    int size = linkedList3.GetSize();
+                    Console.WriteLine("Size of LinkedList: " + size);
+                    break;
+               
                 default:
                     Console.WriteLine("Invalid Option");
                  break;
