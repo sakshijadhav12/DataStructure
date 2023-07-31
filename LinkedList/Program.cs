@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("linkedList");
-            Console.WriteLine("choose option u want! \n1.CustomLinkedList  \n2.Add in Frist \n3.Append \n4.Add in Middle \n5.Delete first \n6.DeleteLast");
+            Console.WriteLine("choose option u want! \n1.CustomLinkedList  \n2.Add in Frist \n3.Append \n4.Add in Middle \n5.Delete first \n6.DeleteLast \n7.Search \n8.Add at specific Position");
              int option=Convert.ToInt32((string)Console.ReadLine());    
             switch(option)
             {
@@ -67,6 +67,23 @@
                     {
                         Console.WriteLine("Node with value 30 not found in the list.");
                     }
+                    break;
+                case 8:
+                    CustomlinkedList1 linkedList2 = new CustomlinkedList1();
+                    linkedList2.AddLast(56);
+                    linkedList2.AddLast(30);
+                    linkedList2.AddLast(70);
+                    Node nodeWithKey30 = linkedList2.Search(30);
+                    if (nodeWithKey30 != null)
+                    {
+                        linkedList2.Insert(30, 40);
+                        linkedList2.Display();
+                    }
+                    else
+                   {
+                        Console.WriteLine("Node with value 30 not found in the list.");
+                   }
+
                     break;
                 default:
                     Console.WriteLine("Invalid Option");
