@@ -16,7 +16,6 @@ namespace LinkedList
             if (head == null)
             {
                 head = newNode;
-                Console.WriteLine("{0} is inserted in the last Node", newNode.data);
             }
             else
             {
@@ -80,8 +79,34 @@ namespace LinkedList
             head = head.next;
 
         }
-       
-        public void Display()
+        public void PopLast()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("The linked list is empty. Nothing to delete.");
+                return;
+            }
+
+            if (head.next == null)
+            {
+                // If there is only one element in the linked list
+                Console.WriteLine("Deleting the last element: {0}", head.data);
+                head = null;
+                return;
+            }
+
+            Node temp = head;
+            while (temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+
+            Console.WriteLine("Deleting the last element: {0}", temp.next.data);
+            temp.next = null;
+        }
+    
+
+    public void Display()
         {
             Node temp = head;
             Console.Write("Linked List: ");
