@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,9 +52,49 @@ namespace LinkedList
                 temp = temp.Next;
             }
         }
+        public void Peek()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("stack is empty");
+                return;
+            }
+            Console.WriteLine("{0} is at the top of the stack", this.top.Data);
+        }
+
+        public void Pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("stack is empty, delete not possible");
+                return;
+            }
+            Console.WriteLine("value popped is {0}", this.top.Data);
+            this.top = this.top.Next;
+        }
+
+        public void IsEmpty()
+        {
+            while (this.top != null)
+            {
+                Peek();
+                Pop();
+            }
+        }
     }
 
 
 
+
+
+
+
+
+
+
 }
+
+
+
+
 
