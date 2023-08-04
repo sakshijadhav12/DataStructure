@@ -44,8 +44,25 @@ namespace LinkedList
                 Next = null;
             }
         }
-       
-    public void Display()
+        public int Dequeue()
+        {
+            if (front == null)
+            {
+                Console.WriteLine("Queue is empty!");
+                return -1;
+            }
+
+            int data = front.Data;
+            front = front.Next;
+            if (front == null)
+            {
+                rear = null;
+            }
+            return data;
+        }
+
+
+        public void Display()
             {
                 Node current = front;
                 Console.WriteLine("Queue elements in the specified order:");

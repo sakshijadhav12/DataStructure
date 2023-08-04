@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("linkedList");
-            Console.WriteLine("choose option u want! \n1.CustomLinkedList  \n2.Add in Frist \n3.Append \n4.Add in Middle \n5.Delete first \n6.DeleteLast \n7.Search \n8.Add at specific Position \n9.Delete afer Search \n10.Sorted List \n11.push elements in the stack \n12.Peek and Pop elements from stack \n13.Enqueue ");
+            Console.WriteLine("choose option u want! \n1.CustomLinkedList  \n2.Add in Frist \n3.Append \n4.Add in Middle \n5.Delete first \n6.DeleteLast \n7.Search \n8.Add at specific Position \n9.Delete afer Search \n10.Sorted List \n11.push elements in the stack \n12.Peek and Pop elements from stack \n13.Enqueue \n14.Dequeue");
              int option=Convert.ToInt32((string)Console.ReadLine());    
             switch(option)
             {
@@ -129,6 +129,21 @@
                     queue.Enqueue(30);
                     queue.Enqueue(70);
                     queue.Display();
+                    break;
+                case 14:
+                    Queue queue1 = new Queue();
+                    queue1.Enqueue(56);
+                    queue1.Enqueue(30);
+                    queue1.Enqueue(70);
+
+                    Console.WriteLine("Dequeueing from the Queue:");
+                    while (true)
+                    {
+                        int element = queue1.Dequeue();
+                        if (element == -1)
+                            break;
+                        Console.WriteLine("Dequeued: " + element);
+                    }
                     break;
                 default:
                     Console.WriteLine("Invalid Option");
